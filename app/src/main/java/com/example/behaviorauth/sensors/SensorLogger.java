@@ -1,0 +1,36 @@
+package com.example.behaviorauth.sensors;
+
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+
+import com.example.behaviorauth.utils.CSVWriter;
+import com.example.behaviorauth.utils.HashUtil;
+
+public class SensorLogger implements SensorEventListener {
+
+    private SensorManager sensorManager;
+
+    public SensorLogger(Context ctx) {
+        sensorManager = (SensorManager) ctx.getSystemService(Context.SENSOR_SERVICE);
+
+        Sensor accel = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        Sensor gyro = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
+
+        if (accel != null) sensorManager.registerListener(this, accel, SensorManager.SENSOR_DELAY_GAME);
+        if (gyro != null) sensorManager.registerListener(this, gyro, SensorManager.SENSOR_DELAY_GAME);
+    }
+
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+        long ts = System.currentTimeMillis();
+        String raw = event.sensor.getName() + "," + event.values[0] + "," + event.values[1] + "," + event.values[2];
+        String hashed = HashUtil.hash(raw);
+        CSVWriter.append("sensor", hashed, ts);
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {}
+}

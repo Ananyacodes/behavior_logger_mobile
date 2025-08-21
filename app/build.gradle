@@ -1,0 +1,28 @@
+// behavior_logger_mobile/app/build.gradle
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace "com.example.behaviorauth"
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.behaviorauth"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+}
