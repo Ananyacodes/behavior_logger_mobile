@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:padding="24dp"
+	android:background="#FAFAFA">
+
+	<TextView
+		android:id="@+id/appTitle"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Behavior Logger"
+		android:textSize="24sp"
+		android:textStyle="bold"
+		android:layout_gravity="center_horizontal"
+		android:paddingBottom="16dp" />
+
+	<TextView
+		android:id="@+id/statusLabel"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Logging Status:"
+		android:textSize="18sp"
+		android:paddingBottom="8dp" />
+
+	<TextView android:id="@+id/biometricStatus"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Biometric: Scheduled"
+		android:paddingBottom="4dp" />
+
+	<TextView android:id="@+id/touchStatus"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Touch Pattern: Scheduled"
+		android:paddingBottom="4dp" />
+
+	<TextView android:id="@+id/loginStatus"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Login Behavior: Scheduled"
+		android:paddingBottom="4dp" />
+
+	<TextView android:id="@+id/keystrokeStatus"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Keystroke: Scheduled"
+		android:paddingBottom="4dp" />
+
+	<TextView android:id="@+id/appBrowserStatus"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="App/Browser Usage: Scheduled"
+		android:paddingBottom="4dp" />
+
+	<TextView android:id="@+id/sensorStatus"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Sensor: Always On"
+		android:paddingBottom="4dp" />
+
+</LinearLayout>
