@@ -9,9 +9,15 @@ import com.example.behaviorauth.utils.HashUtil;
 
 import java.util.List;
 
+
 public class AppUsageLogger {
+    private Context ctx;
 
     public AppUsageLogger(Context ctx) {
+        this.ctx = ctx;
+    }
+
+    public void logUsage() {
         UsageStatsManager usm = (UsageStatsManager) ctx.getSystemService(Context.USAGE_STATS_SERVICE);
         long end = System.currentTimeMillis();
         long start = end - 60000; // last 1 min
